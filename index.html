@@ -16,8 +16,10 @@
 	<body>
 		<div class="page-container">
 			<div id="p-content" class="variation-default font-heading-default font-title-default font-body-default">
+				
+
 				<div class="navbar-section">
-					<div id="header-container" class="navigator">
+					<div id="header-container" class="navigator no-logo">
 						<div class="container wide-container">
 							<div class="center one column header">
 
@@ -50,7 +52,46 @@
 							</div>
 						</div>
 					</div>	
+				</div>
 
+				<div class="navbar-container">
+					<div class="navbar-drawer-bar navbar-transition">
+						<div class="drawer-container">
+							<a class="navbar" href="javascript:void(0);">
+								<div class="navbar-icons">
+									<span></span>
+									<span></span>
+									<span></span>
+								</div>
+							</a>
+							
+						</div>
+						
+					</div>
+
+					<div id="navbar-drawer-mask""></div>
+
+					<div class="navbar-drawer p-nav-drawer">
+						<ul id="navbar-drawer-list">
+							<span>
+								<li class="sliding-middle-out">
+									<a class="navbar-drawer-item font-body" href="#my-work">My Work</a>
+								</li>
+							</span>
+
+							<span>
+								<li class="sliding-middle-out">
+									<a class="navbar-drawer-item font-body" href="#my-background">My Background</a>
+								</li>
+							</span>
+
+							<li class="logo" style="display: block; padding: 0 24px; padding-bottom: 44px;">
+								
+							</li>
+						</ul>
+					</div>
+					
+				</div>
 
 				<div class="page-wrapper">
 					<ul style="display: block;" class="slides">
@@ -455,70 +496,10 @@
 						</div>
 					</div>
 				</div>
-
-
-				<!-- <div id="footer-container" class="p-section p-component footer-logo collapse-bottom-padding">
-					<div class="container wide-container last">
-						<div class="footer column center">
-							
-							<div class="contact-info">
-								<ul class="p-footer">
-									<li class="half-offset-left half-offset-right">
-										<a class="footer-item font-body-default">
-											<span class="font-body">Email:</span>
-										</a>
-
-										<a class="footer-item font-body-default selected" href="mailto:xiao.peng1006@gmail.com">
-											<span class="font-body">xiao.peng1006@gmail.com</span>
-										</a>
-									</li>
-
-
-									<li class="half-offset-left half-offset-right">
-										<a class="footer-item font-body-default">
-											<span class="font-body">Phone:</span>
-										</a>
-
-										<a class="footer-item font-body-default">
-											<span class="font-body">(610)-888-2909</span>
-										</a>
-									</li>
-
-									
-
-									<div class="social-media half-offset-left half-offset-right">
-										<div class="mini-media">
-											<a href="https://www.linkedin.com/in/xiao-peng/" target="_blank">
-												<img src="material/linkedIn_logo.png">
-											<a>
-										</div>
-
-										<div class="mini-media">
-
-											<img src="material/facebook_logo_.png">
-										</div>
-
-										<div class="mini-media">
-											<a href="https://github.com/xiao-peng1006" target="_blank">
-												<img src="material/github_logo.png">
-											</a>
-										</div>	
-
-									</div>
-
-								</ul>
-							</div>
-
-							
-						</div>	
-					</div>
-				</div> -->
-
 			</div>
 		</div>
 
 		<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?LR-verbose&snipver=1&LiveTest=1"></' + 'script>')</script>
-		<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35730/livereload.js?LR-verbose&snipver=1&LiveTest=1"></' + 'script>')</script>
 
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
@@ -558,6 +539,50 @@
 				    durationMode: "all"
 				});
 			});
+
+
+			$(".navbar").click(function() {
+				if ($(".navbar-drawer").hasClass("translate")){
+						$(".navbar-drawer-bar").removeClass("drawer-open")
+						$("#navbar-drawer-mask").fadeOut(function() {
+							return $(this).css("display", "none")})
+
+					$(".navbar-drawer").removeClass("translate")
+					$("body").css("overflow","auto")
+				} 
+				else{
+					$(".navbar-drawer-bar").addClass("drawer-open")
+					$("#navbar-drawer-mask").fadeIn(function(){
+						return $(this).css("display","block")
+					})
+					$(".navbar-drawer").addClass("translate")
+					$("body").css("overflow","hidden")
+				}
+
+			});
+
+			$(".navbar-drawer-item").click(function() {
+				$(this).addClass("selected")
+				$(".navbar-drawer-item").not(this).removeClass("selected")
+
+				if ($(".navbar-drawer").hasClass("translate")){
+						$(".navbar-drawer-bar").removeClass("drawer-open")
+						$("#navbar-drawer-mask").fadeOut(function() {
+							return $(this).css("display", "none")})
+
+					$(".navbar-drawer").removeClass("translate")
+					$("body").css("overflow","auto")
+				} 
+				else{
+					$(".navbar-drawer-bar").addClass("drawer-open")
+					$("#navbar-drawer-mask").fadeIn(function(){
+						return $(this).css("display","block")
+					})
+					$(".navbar-drawer").addClass("translate")
+					$("body").css("overflow","hidden")
+				}
+			})
+
 		</script>
 
 

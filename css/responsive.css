@@ -158,6 +158,27 @@
     }
 }
 
+@media only screen and (max-width: 727px) {
+	#header-container.nologo {
+		display: none;
+	}
+
+	#header-container {
+    	position: relative;
+    	margin-left: 0 !important;
+    }
+    
+    .nav {
+    	display: none;
+    }
+}
+
+@media only screen and (max-width: 727px) {
+	#s-new-mobile-actions-wrapper, .navbar-drawer-bar, .p-nav-drawer, .mobile-actions {
+    	display: block;
+    }
+}
+
 /*--------------------------------------- section-2 ---------------------------------------*/
 
 @media only screen and (max-width: 1299px) and (min-width: 1000px) {
