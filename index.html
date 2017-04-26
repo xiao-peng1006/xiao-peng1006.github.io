@@ -528,41 +528,35 @@
 
 
 		<script type="text/javascript">
-
-			$(".sliding-middle-out").hover(
-				function() {
-					var classId = $(this).attr('id');
-					$("." + classId).css({"color": "#859bb1", "font-weight": "600"});
-				},
-				function() {
-					var classId = $(this).attr('id');
-					$("." + classId).css({"color": "#567", "font-weight": "500"});
+			$(".sliding-middle-out").hover(function() {
+				var classId = $(this).attr('id');
+				$("." + classId).css({"color": "#859bb1", "font-weight": "600"});
+			},
+			function() {
+				var classId = $(this).attr('id');
+				$("." + classId).css({"color": "#567", "font-weight": "500"});
 			});
 
-			$(".linkDiv").click(
-				function() {
-					window.location = $(this).find("a").attr("href"); 
-				    return false;
+			$(".linkDiv").click(function() {
+				window.location = $(this).find("a").attr("href"); 
+			    return false;
 			});
 
 			
-			$(".sliding-middle-out").click(
-				function() {
-					var classId = $(this).attr('id');
-					$("#" + classId + "-section").ScrollTo({
-					    duration: 1000,
-					    durationMode: "all"
+			$(".sliding-middle-out").click(function() {
+				var classId = $(this).attr('id');
+				$("#" + classId + "-section").ScrollTo({
+				    duration: 1000,
+				    durationMode: "all"
 				});
 			});
 
-			$("#back-top").click(
-				function() {
-					$("#p-content").ScrollTo({
-					    duration: 500,
-					    durationMode: "all"
+			$("#back-top").click(function() {
+				$("#p-content").ScrollTo({
+				    duration: 500,
+				    durationMode: "all"
 				});
 			});
-
 		</script>
 
 
