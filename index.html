@@ -559,29 +559,24 @@
 					$("body").css("overflow","hidden")
 				}
 
+
 			});
 
 			$(".navbar-drawer-item").click(function() {
 				$(this).addClass("selected")
 				$(".navbar-drawer-item").not(this).removeClass("selected")
 
-				if ($(".navbar-drawer").hasClass("translate")){
-						$(".navbar-drawer-bar").removeClass("drawer-open")
-						$("#navbar-drawer-mask").fadeOut(function() {
-							return $(this).css("display", "none")})
+				$(".navbar-drawer-bar").removeClass("drawer-open")
+				$("#navbar-drawer-mask").fadeOut(function() {
+					return $(this).css("display", "none")})
 
-					$(".navbar-drawer").removeClass("translate")
-					$("body").css("overflow","auto")
-				} 
-				else{
-					$(".navbar-drawer-bar").addClass("drawer-open")
-					$("#navbar-drawer-mask").fadeIn(function(){
-						return $(this).css("display","block")
-					})
-					$(".navbar-drawer").addClass("translate")
-					$("body").css("overflow","hidden")
-				}
-			})
+				$(".navbar-drawer").removeClass("translate")
+				$("body").css("overflow","auto")
+
+			});
+
+			
+			
 
 		</script>
 
