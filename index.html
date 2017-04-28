@@ -503,85 +503,11 @@
 
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
+		<script src="https://rawgit.com/xiao-peng1006/xiao-peng1006.github.io/master/js/main.js"></script>
+
 		<script src="https://rawgit.com/xiao-peng1006/xiao-peng1006.github.io/master/js/jquery-scrollto.js"></script>
 
 		<script src="https://rawgit.com/xiao-peng1006/xiao-peng1006.github.io/master/js/bootstrap.js"></script>
-
-
-
-		<script type="text/javascript">
-			$(".sliding-middle-out").hover(function() {
-				var classId = $(this).attr('id');
-				$("." + classId).css({"color": "#859bb1", "font-weight": "600"});
-			},
-			function() {
-				var classId = $(this).attr('id');
-				$("." + classId).css({"color": "#567", "font-weight": "500"});
-			});
-
-			$(".linkDiv").click(function() {
-				window.location = $(this).find("a").attr("href"); 
-			    return false;
-			});
-
-			
-			$(".sliding-middle-out").click(function() {
-				var classId = $(this).attr('id');
-				$("#" + classId + "-section").ScrollTo({
-				    duration: 1000,
-				    durationMode: "all"
-				});
-			});
-
-			$("#back-top").click(function() {
-				$("#p-content").ScrollTo({
-				    duration: 500,
-				    durationMode: "all"
-				});
-			});
-
-
-			$(".navbar").click(function() {
-				if ($(".navbar-drawer").hasClass("translate")){
-						$(".navbar-drawer-bar").removeClass("drawer-open")
-						$("#navbar-drawer-mask").fadeOut(function() {
-							return $(this).css("display", "none")})
-
-					$(".navbar-drawer").removeClass("translate")
-					$("body").css("overflow","auto")
-				} 
-				else{
-					$(".navbar-drawer-bar").addClass("drawer-open")
-					$("#navbar-drawer-mask").fadeIn(function(){
-						return $(this).css("display","block")
-					})
-					$(".navbar-drawer").addClass("translate")
-					$("body").css("overflow","hidden")
-				}
-
-
-			});
-
-			$(".navbar-drawer-item").click(function() {
-				$(this).addClass("selected")
-				$(".navbar-drawer-item").not(this).removeClass("selected")
-
-				$(".navbar-drawer-bar").removeClass("drawer-open")
-				$("#navbar-drawer-mask").fadeOut(function() {
-					return $(this).css("display", "none")})
-
-				$(".navbar-drawer").removeClass("translate")
-				$("body").css("overflow","auto")
-
-			});
-
-			
-			
-
-		</script>
-
-
-
 
 		</body>
 </html>
