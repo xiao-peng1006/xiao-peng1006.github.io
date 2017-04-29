@@ -423,7 +423,7 @@ a {
     padding: 0 24px;
 }
 
-.p-nav-drawer ul li a {
+.p-nav-drawer ul li a.font-body {
     display: block;
     color: #666;
     padding: 15px 30px;
@@ -435,6 +435,17 @@ a {
     color: #333;
     font-weight: bold;
     outline-style: none;
+}
+
+#navbar-drawer-list .mini-media {
+    width: 32px;
+    padding: 0 5px;
+    display: inline-block;
+}
+
+.p-nav-drawer ul li a.media-link {
+    height: 32px;
+    display: block;
 }
 
 /*--------------------------------------- section-1 ---------------------------------------*/
