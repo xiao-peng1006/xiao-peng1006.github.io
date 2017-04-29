@@ -14,46 +14,23 @@ $ (function() {
 	    return false;
 	});
 
-	
 	$(".sliding-middle-out").click(function() {
-		var classId = $(this).attr('id');
-		$("#" + classId + "-section").ScrollTo({
-		    duration: 1000,
-		    durationMode: "all"
-		});
+		var body = $("html, body");
+		var classId = $(this).attr('data-id');
+		body.stop().animate({
+			scrollTop:$("#" + classId + "-section").offset().top
+		}, 1500);
 	});
 
 	$("#back-top").click(function() {
-		$("#p-content").ScrollTo({
-		    duration: 500,
-		    durationMode: "all"
-		});
+		var body = $("html, body");
+		body.stop().animate({
+			scrollTop:0}, "500", "swing")
 	});
 
 // Click on Nav Hamburger Menu
 
-	$(".navbar").click(function(event) {
-		if ($(".navbar-drawer").hasClass("translate")){
-			$(this).parent().parent().removeClass("drawer-open")
-			$(this).parent().parent().next().fadeOut(function() {
-				return $(this).css("display", "none")})
-
-			$(".navbar-drawer").removeClass("translate")
-			$("body").css("overflow","auto")
-		} 
-		else{
-			$(this).parent().parent().addClass("drawer-open")
-			$(this).parent().parent().next().fadeIn(function(){
-				return $(this).css("display","block")
-			})
-			$(".navbar-drawer").addClass("translate")
-			$("body").css("overflow","hidden")
-		}
-	});
-
-// Click Outside the Nav Drawer
-
-	$(window).click(function() {
+	function closeDrawer(){
 		if ($(".navbar-drawer").hasClass("translate")){
 
 			$(".navbar").parent().parent().removeClass("drawer-open")
@@ -63,8 +40,23 @@ $ (function() {
 			$(".navbar-drawer").removeClass("translate")
 			$("body").css("overflow","auto")
 		}
+	}
 
-	});
+	function openDrawer(){
+		if (!$(".navbar-drawer").hasClass("translate")){
+			$(this).parent().parent().addClass("drawer-open")
+			$(this).parent().parent().next().fadeIn(function(){
+				return $(this).css("display","block")
+			})
+			$(".navbar-drawer").addClass("translate")
+			$("body").css("overflow","hidden")
+		}
+	}
+
+	$(".navbar").on("click", closeDrawer).on("click", openDrawer);
+// Click Outside the Nav Drawer
+
+	$(window).on("click", closeDrawer);
 
 	$('.navbar-drawer, .navbar-drawer-bar').click(function(event){
 	    event.stopPropagation();
