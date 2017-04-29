@@ -30,7 +30,9 @@ $ (function() {
 		});
 	});
 
-	$(".navbar").click(function() {
+// Click on Nav Hamburger Menu
+
+	$(".navbar").click(function(event) {
 		if ($(".navbar-drawer").hasClass("translate")){
 			$(this).parent().parent().removeClass("drawer-open")
 			$(this).parent().parent().next().fadeOut(function() {
@@ -47,9 +49,28 @@ $ (function() {
 			$(".navbar-drawer").addClass("translate")
 			$("body").css("overflow","hidden")
 		}
+	});
 
+// Click Outside the Nav Drawer
+
+	$(window).click(function() {
+		if ($(".navbar-drawer").hasClass("translate")){
+
+			$(".navbar").parent().parent().removeClass("drawer-open")
+			$(".navbar").parent().parent().next().fadeOut(function() {
+				return $("this").css("display", "none")})
+
+			$(".navbar-drawer").removeClass("translate")
+			$("body").css("overflow","auto")
+		}
 
 	});
+
+	$('.navbar-drawer, .navbar-drawer-bar').click(function(event){
+	    event.stopPropagation();
+	});
+
+// Click on items inside Nav Drawer
 
 	$(".navbar-drawer-item").click(function() {
 		$(this).addClass("selected")
