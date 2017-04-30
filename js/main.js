@@ -48,7 +48,7 @@ $ (function() {
 		$("body").css("overflow","hidden")
 	}
 
-	$(".navbar").on("click tap", function() {
+	$(".navbar").on("click", function() {
 		if ($(".navbar-drawer").hasClass("translate")){
 			closeDrawer();
 		}
@@ -59,7 +59,7 @@ $ (function() {
 
 // Click Outside the Nav Drawer
 
-	$(window).on("click tap",function(){
+	$(window).on("click tap", function(){
 		if ($(".navbar-drawer").hasClass("translate")){
 			closeDrawer();
 		}
