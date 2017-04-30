@@ -1,20 +1,19 @@
 $ (function() {
 
-	$(".sliding-middle-out").hover(function() {
-		var classId = $(this).attr('id');
+	$(".sliding-middle-out.hover-action").hover(function() {
+		var classId = $(this).attr('data-id');
 		$("." + classId).css({"color": "#859bb1", "font-weight": "600"});
-	},
-	function() {
-		var classId = $(this).attr('id');
+	}, function() {
+		var classId = $(this).attr('data-id');
 		$("." + classId).css({"color": "#567", "font-weight": "500"});
 	});
 
-	$(".linkDiv").click(function() {
+	$(".linkDiv").on("click", function() {
 		window.location = $(this).find("a").attr("href"); 
 	    return false;
 	});
 
-	$(".sliding-middle-out").on("click touchend", function() {
+	$(".sliding-middle-out").on("click", function() {
 		var body = $("html, body");
 		var classId = $(this).attr('data-id');
 		body.stop().animate({
@@ -48,7 +47,7 @@ $ (function() {
 		$("body").css("overflow","hidden")
 	}
 
-	$(".navbar").on("tap", function() {
+	$(".navbar").on("click", function() {
 		if ($(".navbar-drawer").hasClass("translate")){
 			closeDrawer();
 		}

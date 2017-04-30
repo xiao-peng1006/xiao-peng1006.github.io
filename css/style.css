@@ -210,7 +210,7 @@ a {
 	transition: width .5s ease, background-color .5s ease;
 }
 
-.sliding-middle-out:hover:after {
+.sliding-middle-out.hover-action:hover:after {
 	width: 100%;
 	background: #555;
 }
