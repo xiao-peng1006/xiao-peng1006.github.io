@@ -58,19 +58,19 @@ $ (function() {
 
 // Click Outside the Nav Drawer
 
-	$(window).on("click touchend", function(){
+	$(window).on("click", function(){
 		if ($(".navbar-drawer").hasClass("translate")){
 			closeDrawer();
 		}
 	})
 
-	$('.navbar-drawer, .navbar-drawer-bar').on("click touchend", function(event){
+	$('.navbar-drawer, .navbar-drawer-bar').on("click", function(event){
 	    event.stopPropagation();
 	});
 
 // Click on items inside Nav Drawer
 
-	$(".navbar-drawer-item").on("click touchend", function() {
+	$(".navbar-drawer-item").on("click", function() {
 		$(this).addClass("selected")
 		$(".navbar-drawer-item").not(this).removeClass("selected")
 
