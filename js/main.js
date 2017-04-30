@@ -14,7 +14,7 @@ $ (function() {
 	    return false;
 	});
 
-	$(".sliding-middle-out").on("click touch", function() {
+	$(".sliding-middle-out").on("click touchstart", function() {
 		var body = $("html, body");
 		var classId = $(this).attr('data-id');
 		body.stop().animate({
@@ -22,7 +22,7 @@ $ (function() {
 		}, 1500);
 	});
 
-	$("#back-top").on("click touch", function() {
+	$("#back-top").on("click touchstart", function() {
 		var body = $("html, body");
 		body.stop().animate({
 			scrollTop:0}, "500", "swing")
@@ -48,7 +48,7 @@ $ (function() {
 		$("body").css("overflow","hidden")
 	}
 
-	$(".navbar").on("click touch", function() {
+	$(".navbar").on("click touchstart", function() {
 		if ($(".navbar-drawer").hasClass("translate")){
 			closeDrawer();
 		}
@@ -59,19 +59,19 @@ $ (function() {
 
 // Click Outside the Nav Drawer
 
-	$(window).on("click touch",function(){
+	$(window).on("click touchstart",function(){
 		if ($(".navbar-drawer").hasClass("translate")){
 			closeDrawer();
 		}
 	})
 
-	$('.navbar-drawer, .navbar-drawer-bar').on("click touch", function(event){
+	$('.navbar-drawer, .navbar-drawer-bar').on("click touchstart", function(event){
 	    event.stopPropagation();
 	});
 
 // Click on items inside Nav Drawer
 
-	$(".navbar-drawer-item").on("click touch", function() {
+	$(".navbar-drawer-item").on("click touchstart", function() {
 		$(this).addClass("selected")
 		$(".navbar-drawer-item").not(this).removeClass("selected")
 
