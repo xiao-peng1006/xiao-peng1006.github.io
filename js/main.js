@@ -31,32 +31,39 @@ $ (function() {
 // Click on Nav Hamburger Menu
 
 	function closeDrawer(){
-		if ($(".navbar-drawer").hasClass("translate")){
+		$(".navbar").parent().parent().removeClass("drawer-open")
+		$(".navbar").parent().parent().next().fadeOut(function() {
+			return $(this).css("display", "none")})
 
-			$(".navbar").parent().parent().removeClass("drawer-open")
-			$(".navbar").parent().parent().next().fadeOut(function() {
-				return $("this").css("display", "none")})
-
-			$(".navbar-drawer").removeClass("translate")
-			$("body").css("overflow","auto")
-		}
+		$(".navbar-drawer").removeClass("translate")
+		$("body").css("overflow","auto")
 	}
 
 	function openDrawer(){
-		if (!$(".navbar-drawer").hasClass("translate")){
-			$(this).parent().parent().addClass("drawer-open")
-			$(this).parent().parent().next().fadeIn(function(){
-				return $(this).css("display","block")
-			})
-			$(".navbar-drawer").addClass("translate")
-			$("body").css("overflow","hidden")
-		}
+		$(".navbar").parent().parent().addClass("drawer-open")
+		$(".navbar").parent().parent().next().fadeIn(function(){
+			return $(this).css("display","block")
+		})
+		$(".navbar-drawer").addClass("translate")
+		$("body").css("overflow","hidden")
 	}
 
-	$(".navbar").on("click", closeDrawer).on("click", openDrawer);
+	$(".navbar").click(function() {
+		if ($(".navbar-drawer").hasClass("translate")){
+			closeDrawer();
+		}
+		else {
+			openDrawer();
+		}
+	})
+
 // Click Outside the Nav Drawer
 
-	$(window).on("click", closeDrawer);
+	$(window).click(function(){
+		if ($(".navbar-drawer").hasClass("translate")){
+			closeDrawer();
+		}
+	})
 
 	$('.navbar-drawer, .navbar-drawer-bar').click(function(event){
 	    event.stopPropagation();
