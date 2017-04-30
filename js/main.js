@@ -14,7 +14,7 @@ $ (function() {
 	    return false;
 	});
 
-	$(".sliding-middle-out").on("click tap", function() {
+	$(".sliding-middle-out").on("click touchend", function() {
 		var body = $("html, body");
 		var classId = $(this).attr('data-id');
 		body.stop().animate({
@@ -22,7 +22,7 @@ $ (function() {
 		}, 1500);
 	});
 
-	$("#back-top").on("click tap", function() {
+	$("#back-top").on("click touchend", function() {
 		var body = $("html, body");
 		body.stop().animate({
 			scrollTop:0}, "500", "swing")
@@ -59,19 +59,19 @@ $ (function() {
 
 // Click Outside the Nav Drawer
 
-	$(window).on("tap", function(){
+	$(window).on("click touchend", function(){
 		if ($(".navbar-drawer").hasClass("translate")){
 			closeDrawer();
 		}
 	})
 
-	$('.navbar-drawer, .navbar-drawer-bar').on("tap", function(event){
+	$('.navbar-drawer, .navbar-drawer-bar').on("click touchend", function(event){
 	    event.stopPropagation();
 	});
 
 // Click on items inside Nav Drawer
 
-	$(".navbar-drawer-item").on("tap", function() {
+	$(".navbar-drawer-item").on("click touchend", function() {
 		$(this).addClass("selected")
 		$(".navbar-drawer-item").not(this).removeClass("selected")
 
