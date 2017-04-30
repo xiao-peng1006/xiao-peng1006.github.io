@@ -48,7 +48,7 @@ $ (function() {
 		$("body").css("overflow","hidden")
 	}
 
-	$(".navbar").on("click", function() {
+	$(".navbar").on("tap", function() {
 		if ($(".navbar-drawer").hasClass("translate")){
 			closeDrawer();
 		}
@@ -59,19 +59,19 @@ $ (function() {
 
 // Click Outside the Nav Drawer
 
-	$(window).on("click tap", function(){
+	$(window).on("tap", function(){
 		if ($(".navbar-drawer").hasClass("translate")){
 			closeDrawer();
 		}
 	})
 
-	$('.navbar-drawer, .navbar-drawer-bar').on("click tap", function(event){
+	$('.navbar-drawer, .navbar-drawer-bar').on("tap", function(event){
 	    event.stopPropagation();
 	});
 
 // Click on items inside Nav Drawer
 
-	$(".navbar-drawer-item").on("click tap", function() {
+	$(".navbar-drawer-item").on("tap", function() {
 		$(this).addClass("selected")
 		$(".navbar-drawer-item").not(this).removeClass("selected")
 
