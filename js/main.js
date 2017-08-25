@@ -1,5 +1,5 @@
-$ (function() {
-
+function() {
+	
 	$(".sliding-middle-out.hover-action").hover(function() {
 		var classId = $(this).attr('data-id');
 		$("." + classId).css({"color": "#859bb1", "font-weight": "600"});
@@ -89,4 +89,4 @@ $ (function() {
 			closeDrawer();
 		}
 	});
-})
+}
