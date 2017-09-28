@@ -1,5 +1,5 @@
-function() {
-	
+$(document).ready(function() {
+
 	$(".sliding-middle-out.hover-action").hover(function() {
 		var classId = $(this).attr('data-id');
 		$("." + classId).css({"color": "#859bb1", "font-weight": "600"});
@@ -9,7 +9,7 @@ function() {
 	});
 
 	$(".linkDiv").on("click", function() {
-		window.location = $(this).find("a").attr("href"); 
+		window.location = $(this).find("a").attr("href");
 	    return false;
 	});
 
@@ -23,8 +23,7 @@ function() {
 
 	$("#back-top").on("click touchend", function() {
 		var body = $("html, body");
-		body.stop().animate({
-			scrollTop:0}, "500", "swing")
+		body.stop().animate({scrollTop: 0}, 500, "swing")
 	});
 
 // Click on Nav Hamburger Menu
@@ -89,4 +88,5 @@ function() {
 			closeDrawer();
 		}
 	});
-}
+
+});
